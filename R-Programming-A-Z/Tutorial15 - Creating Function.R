@@ -1,13 +1,13 @@
 
+myPlot <- function(data, rows=1:10) {
+  Data <- data[rows, , drop=F]
+  matplot(t(Data), type = "b", pch = 15:18, col = c(1:4,6))
+  legend("bottomleft", inset=0.01, legend = Players[rows], col = c(1:4,6), pch = 15:18, horiz=F)
+}
 
-#accuracy
-Data <- MinutesPlayed[1:3, ]
-matplot(t(Data), type = "b", pch = 15:18, col = c(1:4,6))
-legend("bottomleft", inset=0.01, legend = Players[1:3], col = c(1:4,6), pch = 15:18, horiz=F)
+myPlot(MinutesPlayed, 1:3)
+myPlot(Salary, 1:3)
+myPlot(Salary)
 
-
-
-#Data <- MinutesPlayed[1,]
-Data <- MinutesPlayed[1, , drop=F]
-matplot(t(Data), type = "b", pch = 15:18, col = c(1:4,6))
-legend("bottomleft", inset=0.01, legend = Players[1], col = c(1:4,6), pch = 15:18, horiz=F)
+myPlot(Salary/Games)
+myPlot(Salary/FieldGoals)
